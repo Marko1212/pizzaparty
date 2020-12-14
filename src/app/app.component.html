@@ -7,6 +7,8 @@
     <img [src]="'assets/img/pizzas/' + maSuperPizza.image" [alt]= "maSuperPizza.name">
 </div>
 
+
+<!--Bidirectional binding-->
 <input [(ngModel)] = "maSuperPizza.name">
 
 <input #toto [value] = "maSuperPizza.name" (keyup) = "maSuperPizza.name = toto.value">
