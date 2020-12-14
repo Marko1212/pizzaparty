@@ -12,6 +12,7 @@ export class AppComponent {
   maSuperPizza: Pizza = {
     id: 1,
     name: '4 fromages',
-    price: 12
+    price: 12,
+    image: '4-fromages.jpg'
   };
 }
