@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class MenuComponent implements OnInit {
 
   isCollapsed = false;
+  isCollapsedDropdownMenu = false;
 
   constructor() { }
 
@@ -16,6 +17,10 @@ export class MenuComponent implements OnInit {
 
   toggleCollapseNavbar() {
     this.isCollapsed = !this.isCollapsed;
+  }
+
+  toggleCollapseDropdownMenu() {
+    this.isCollapsedDropdownMenu = !this.isCollapsedDropdownMenu;
   }
 
 }
