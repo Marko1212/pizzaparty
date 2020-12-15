@@ -9,6 +9,7 @@ export class PizzaService {
   constructor() { }
 
   getPizzas() : Pizza[] {
+
     return [
       {id: 1, name: 'Reine', price: 12, image : "reine.jpg"},
       {id: 2, name: '4 fromages', price: 13, image :"4-fromages.jpg"},

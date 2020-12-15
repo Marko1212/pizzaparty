@@ -18,7 +18,10 @@ export class PizzaListComponent implements OnInit {
   constructor( private pizzaService : PizzaService ) { }
 
   ngOnInit(): void {
+    
+    console.log(this.pizzaService.getPizzas());
     this.mesPizzas = this.pizzaService.getPizzas();
+   
   }
 
   onSelect(pizza: Pizza) {
