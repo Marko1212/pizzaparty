@@ -1,5 +1,10 @@
-<app-menu [navTitle] = "title" [color] = "'light'"></app-menu>
-<!-- on aurait pu écrire color = 'light' , sans les crochets ; on met les crochets à gauche quand l'expression à droite est une variable, comme dans le cas [navTitle] = 'title' , en effet, title est une variable -->
+<app-menu [navTitle] = "title" [color] = "'dark'"></app-menu>
+<!-- on aurait pu écrire color = 'light' , sans les crochets ; on met les crochets à gauche quand l'expression à droite est une variable, comme dans le cas [navTitle] = 'title' , en effet, title est une variable 
+
+sans les crochets : html, avec les crochets : JavaScript 
+
+on aurait pu écrire : navTitle = {{title}} , c'est la 'syntaxe html', mais ce n'est pas très 'beau' -->
+
 <div class="container">
 
 <h1>{{ title }}</h1>

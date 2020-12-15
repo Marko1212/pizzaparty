@@ -8,7 +8,9 @@ import { Component, OnInit, Input } from '@angular/core';
 export class MenuComponent implements OnInit {
 
   isCollapsed = false;
-  @Input() navTitle;
+  @Input() navTitle : string;
+
+  //valeur par défaut : light
   @Input() color = "light";
 
   constructor() { }
