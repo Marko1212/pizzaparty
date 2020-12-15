@@ -22,4 +22,12 @@ export class MenuComponent implements OnInit {
     this.isCollapsed = !this.isCollapsed;
   }
 
+  changeTheme() {
+    if (this.color ==="light") {
+      this.color = 'dark';
+    } else {
+      this.color = 'light';
+    }
+  }
+
 }
