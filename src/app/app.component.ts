@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {Pizza} from './pizza';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +6,6 @@ import {Pizza} from './pizza';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Pizza Partykugkhkhk';
+  title = 'Pizza Party';
  
 }

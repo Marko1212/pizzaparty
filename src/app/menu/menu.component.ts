@@ -9,6 +9,7 @@ export class MenuComponent implements OnInit {
 
   isCollapsed = false;
   @Input() navTitle;
+  @Input() color = "light";
 
   constructor() { }
 
