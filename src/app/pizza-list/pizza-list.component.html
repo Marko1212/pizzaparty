@@ -24,7 +24,7 @@
     *ngFor="let pizza of mesPizzas"
     (click)="onSelect(pizza)"
   >
-    <div class="card">
+    <div class="card" [class.selected]="pizza === maSuperPizza">
       <img
         [src]="'assets/img/pizzas/' + pizza.image"
         [alt]="pizza.name"
