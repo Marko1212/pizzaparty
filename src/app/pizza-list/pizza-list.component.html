@@ -1,9 +1,9 @@
-<div *ngIf="maSuperPizza" class="row">
+<div *ngIf="maSuperPizza" class="row text-white">
   <div class="col-lg-3">
     <img
       [src]="'assets/img/pizzas/' + maSuperPizza.image"
       [alt]="maSuperPizza.name"
-      class="img-fluid"
+      class="img-fluid rounded-lg"
     />
   </div>
   <div class="col-lg-9">
@@ -13,18 +13,18 @@
     <!-- <input #toto [value] = "maSuperPizza.name" (keyup) = "maSuperPizza.name = toto.value">
 
 <input #pizzaName [value] = "maSuperPizza.name" (keydown) = "maSuperPizza.name = pizzaName.value"> -->
-    <input [(ngModel)]="maSuperPizza.name" />
+    <input [(ngModel)]="maSuperPizza.name" class='form-control'/>
   </div>
 </div>
 
-<h2>La liste des pizzas</h2>
+<h2 class="text-white my-4">La liste des pizzas</h2>
 <div class="row">
   <div
-    class="col-lg-3"
+    class="col-sm-6 col-lg-3"
     *ngFor="let pizza of mesPizzas"
     (click)="onSelect(pizza)"
   >
-    <div class="card" [class.selected]="pizza === maSuperPizza">
+    <div class="card shadow mb-4" [class.selected]="pizza === maSuperPizza">
       <img
         [src]="'assets/img/pizzas/' + pizza.image"
         [alt]="pizza.name"
