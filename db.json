@@ -35,6 +35,12 @@
       "price": 54,
       "image": "orientale.jpg",
       "id": 6
+    },
+    {
+      "name": "4 fromages",
+      "price": 585,
+      "image": "4-fromages.jpg",
+      "id": 7
     }
   ]
 }

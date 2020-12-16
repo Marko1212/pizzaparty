@@ -33,6 +33,7 @@ export class PizzaListComponent implements OnInit {
   onSelect(pizza: Pizza) {
     console.log(pizza);
     this.maSuperPizza = pizza;
+    window.scrollTo(0, 0);
   }
 
 }
