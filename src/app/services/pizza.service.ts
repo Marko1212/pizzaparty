@@ -14,6 +14,15 @@ export class PizzaService {
     return this.http.get<Pizza[]>('http://localhost:3000/pizzas/').toPromise();
   }
 
+  getPizzasSlowly(): Promise<Pizza[]> {
+    // Ici, je simule une connexion lente sur mon API
+    //le time out est à enlever si on met le site en ligne
+    return new Promise(resolve => {
+      setTimeout(() => resolve(this.getPizzas()), 500);
+    });
+  }
+
+
   createPizza(pizza: Pizza) : Promise<Pizza> {
 
     return this.http.post<Pizza>('http://localhost:3000/pizzas/', pizza).toPromise();

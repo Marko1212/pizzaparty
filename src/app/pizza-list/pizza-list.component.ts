@@ -11,7 +11,7 @@ import { PizzaService } from '../services/pizza.service';
 export class PizzaListComponent implements OnInit {
 
   maSuperPizza: Pizza;
-  mesPizzas: Pizza[];
+  mesPizzas: Pizza[] = [];
   
   //pizzaService est une propriété de l'objet PizzaListComponent
   // de même que maSuperPizza et mesPizzas
@@ -23,7 +23,7 @@ export class PizzaListComponent implements OnInit {
     //console.log(this.pizzaService.getPizzas());
 
     //on résout la promesse
-    this.pizzaService.getPizzas().then(pizzas => {
+    this.pizzaService.getPizzasSlowly().then(pizzas => {
       //console.log(pizzas);
       this.mesPizzas = pizzas;
     });
