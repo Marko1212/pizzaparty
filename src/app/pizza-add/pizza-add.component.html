@@ -1,34 +1,90 @@
 <div class="row">
-    <div class='col-lg-6 offset-lg-3'>
-        <div class="card shadow">
-            <div class="card-body">
-                <form (ngSubmit) = 'addPizza()' #errorPizza="ngForm">
-                    <label for = 'name'>Nom</label>
-                    <input type='text' id='text' name='name' class="form-control" [(ngModel)] = "pizza.name" minlength="3" required #errorName="ngModel"> <br />
-                    <!--comme on utilise [(ngModel)], il faut définir un attribut name; c'est requis par Angular, peu importe le nom-->
-                    <!-- le #errorName sert à collecter les erreurs -->
-                    <!--hasError() permet de vérifier exactement le type d'erreur qu'on a sur le champ -->
-                    <div *ngIf = "errorName.dirty && errorName.hasError('required')" class="text-danger">Le nom est vide.</div>
-                    <div *ngIf = "errorName.dirty && errorName.hasError('minlength')" class="text-danger">Le nom doit faire 3 caractères.</div>
+  <div class="col-lg-6 offset-lg-3">
+    <div class="card shadow">
+      <div class="card-body">
+        <form (ngSubmit)="addPizza()" #errorPizza="ngForm">
+          <label for="name">Nom</label>
+          <input
+            type="text"
+            id="text"
+            name="name"
+            class="form-control"
+            [(ngModel)]="pizza.name"
+            minlength="3"
+            required
+            #errorName="ngModel"
+          />
+          <br />
+          <!--comme on utilise [(ngModel)], il faut définir un attribut name; c'est requis par Angular, peu importe le nom-->
+          <!-- le #errorName sert à collecter les erreurs -->
+          <!--hasError() permet de vérifier exactement le type d'erreur qu'on a sur le champ -->
+          <div
+            *ngIf="errorName.dirty && errorName.hasError('required')"
+            class="text-danger"
+          >
+            Le nom est vide.
+          </div>
+          <div
+            *ngIf="errorName.dirty && errorName.hasError('minlength')"
+            class="text-danger"
+          >
+            Le nom doit faire 3 caractères.
+          </div>
 
-                    <!--dirty signifie que le champ a été modifié et invalid que le champ est incorrect sur TOUS les critères -->
-                    <!-- <div *ngIf="errorName.dirty && errorName.invalid" class="text-danger">Le nom est vide ou doit faire 3 caractères</div> -->
+          <!--dirty signifie que le champ a été modifié et invalid que le champ est incorrect sur TOUS les critères -->
+          <!-- <div *ngIf="errorName.dirty && errorName.invalid" class="text-danger">Le nom est vide ou doit faire 3 caractères</div> -->
 
-                    <label for = 'price' Nom>Prix</label>
-                    <input type='number' id='price' name='price' class="form-control" [(ngModel)] = "pizza.price" required #errorPrice = "ngModel"> <br />
-                    <div *ngIf="errorPrice.dirty && errorPrice.invalid" class="text-danger">Le prix est obligatoire</div>
+          <label for="price" Nom>Prix</label>
+          <input
+            type="number"
+            id="price"
+            name="price"
+            class="form-control"
+            [(ngModel)]="pizza.price"
+            required
+            #errorPrice="ngModel"
+          />
+          <br />
+          <div
+            *ngIf="errorPrice.dirty && errorPrice.invalid"
+            class="text-danger"
+          >
+            Le prix est obligatoire
+          </div>
 
-                    <label for = 'image'>Image</label>
-                    <input type='text' name='image' id = "image" class="form-control" [(ngModel)] = "pizza.image" required #errorImage = "ngModel"> <br />
-                    <div *ngIf="errorImage.dirty && errorImage.invalid" class="text-danger">L'image est obligatoire</div>
+          <label for="image">Image</label>
+          <input
+            type="text"
+            name="image"
+            id="image"
+            class="form-control"
+            [(ngModel)]="pizza.image"
+            required
+            #errorImage="ngModel"
+          />
+          <br />
+          <div
+            *ngIf="errorImage.dirty && errorImage.invalid"
+            class="text-danger"
+          >
+            L'image est obligatoire
+          </div>
 
-                    <div class='text-right'>
-                        <button class='btn btn-primary' [disabled]="errorPizza.invalid">Créer la pizza</button>
-                    </div>
-
-                    </form>
-                    
-           </div>
-        </div>
+          <div class="text-right">
+            <button class="btn btn-primary" [disabled]="errorPizza.invalid || loading">
+              <span *ngIf="!loading">Créer la pizza</span>
+              <span *ngIf="loading">
+                <span
+                  class="spinner-border spinner-border-sm"
+                  role="status"
+                  aria-hidden="true"
+                ></span>
+                Cuisson...
+              </span>
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
+  </div>
 </div>

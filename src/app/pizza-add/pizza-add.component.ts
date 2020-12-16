@@ -14,6 +14,9 @@ export class PizzaAddComponent implements OnInit {
   //constructeur implicite, il faut initialiser la propriété (champ) de l'objet, 
   //pour éviter l'érreur dans la console (formulaire)
 
+  loading: boolean = false;
+
+
   constructor(private pizzaService: PizzaService, private router: Router) { }
   //il faut mettre private pour que ça marche!
 
@@ -21,12 +24,13 @@ export class PizzaAddComponent implements OnInit {
   }
 
   addPizza() {
+    this.loading = true;
     //console.log(this.pizza);
-    this.pizzaService.createPizza(this.pizza).then(pizza => {
+    this.pizzaService.createPizzaSlowly(this.pizza).then(pizza => {
       console.log(pizza);
       this.router.navigate(["/pizzas"]);
-      
-      
+      //on arrête le loading (cette dernière ligne est optionnelle car on est redirigé sur une autre page, donc, loading passe automatiquement à false)
+      this.loading = false;
     });
 
     

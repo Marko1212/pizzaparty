@@ -35,6 +35,14 @@ export class PizzaService {
   }
 
 
+  createPizzaSlowly(pizza: Pizza): Promise<Pizza> {
+    // Ici, je simule une connexion lente sur mon API
+    return new Promise(resolve => {
+      setTimeout(() => resolve(this.createPizza(pizza)), 2000);
+    });
+  }
+
+
 }
 
 //création d'une 'fake api' en local : https://github.com/typicode/json-server

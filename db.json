@@ -41,6 +41,12 @@
       "price": 585,
       "image": "4-fromages.jpg",
       "id": 7
+    },
+    {
+      "name": "cannibale bis",
+      "price": 888,
+      "image": "cannibale.jpg",
+      "id": 8
     }
   ]
 }
