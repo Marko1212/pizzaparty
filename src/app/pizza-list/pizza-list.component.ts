@@ -15,12 +15,18 @@ export class PizzaListComponent implements OnInit {
   
   //pizzaService est une propriété de l'objet PizzaListComponent
   // de même que maSuperPizza et mesPizzas
+  //injection de dépendance via le constructeur
   constructor( private pizzaService : PizzaService ) { }
 
   ngOnInit(): void {
     
-    console.log(this.pizzaService.getPizzas());
-    this.mesPizzas = this.pizzaService.getPizzas();
+    //console.log(this.pizzaService.getPizzas());
+
+    //on résout la promesse
+    this.pizzaService.getPizzas().then(pizzas => {
+      //console.log(pizzas);
+      this.mesPizzas = pizzas;
+    });
    
   }
 
