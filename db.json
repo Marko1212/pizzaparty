@@ -25,28 +25,34 @@
       "image": "cannibale.jpg"
     },
     {
-      "name": "Calzone",
+      "name": "Capricciosa",
       "price": 33,
       "image": "reine.jpg",
       "id": 5
     },
     {
-      "name": "Pizza",
+      "name": "Veggie",
       "price": 54,
       "image": "orientale.jpg",
       "id": 6
     },
     {
-      "name": "4 fromages",
+      "name": "Buffalo",
       "price": 585,
       "image": "4-fromages.jpg",
       "id": 7
     },
     {
-      "name": "cannibale bis",
+      "name": "Hawaiian",
       "price": 888,
       "image": "cannibale.jpg",
       "id": 8
+    },
+    {
+      "name": "Calzone",
+      "price": 55,
+      "image": "calzone.jpg",
+      "id": 9
     }
   ]
 }
